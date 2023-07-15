@@ -5,6 +5,6 @@ class HomeController < ApplicationController
 
 
 
-    render html: '<h1> Olá Mundo! <h1>'.html_safe
+    #render html: '<h1> Olá Mundo! <h1>'.html_safe
   end
 end
