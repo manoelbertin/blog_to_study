@@ -1,1 +1,6 @@
-<h1> Olá Mundo! <h1>
+<h1> Hello World !! My name is ... first <%= @name %> ... </h1>
+
+<% @devs.each do |dev| %>
+  <p> 
+    <b>Hello World !! My name is ...   <%= dev[:name] %> ... dev "<%= dev[:dev] %>"</b>
+<% end %>
