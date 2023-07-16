@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   # patch '/vehicles/:id', controller: 'vehicles', action: 'update'
 
   # delete '/vehicles/:id', controller: 'vehicles', action: 'destroy'
-  resources :vehicles, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  #resources :vehicles, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :vehicles, only: %i[:index]
 end
