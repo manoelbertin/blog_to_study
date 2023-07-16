@@ -1,0 +1,12 @@
+<h1>Vehicles: </h1>
+
+  <% @vehicles.each do |vehicle| %>
+    <p>
+      <%= vehicle.brand %> |
+      <%= vehicle.model %> |
+      <%= vehicle.year %> |
+      <%= vehicle.plate %> |
+      <%= vehicle.kind %> |
+    </p>
+  <%end %>
+ 
