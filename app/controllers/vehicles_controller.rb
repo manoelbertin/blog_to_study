@@ -9,6 +9,12 @@ class VehiclesController < ApplicationController
 
   def create # aqui é do backend
     @vehicle = Vehicle.new(vehicle_params)
+
+    if @vehicle.save 
+      redirect_to vehicle_path(@vehicle)
+    else
+      render :new
+    end
   end
 
   def show # aqui mostro 1 por vez
