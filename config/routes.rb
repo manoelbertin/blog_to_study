@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #get '/home', controller: 'home', action: 'index'
+  get '/home', controller: 'home', action: 'index'
 
   # get '/vehicles', controller: 'vehicles', action: 'index'
 
@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   ### aqui está o PADRAO RESTFull
 
   #resources :vehicles, only: [:index, :new, :create, :show, :edit, :update, :destroy]
-  resources :vehicles, only: %i[ index new create show]
+  resources :vehicles, only: %i[ index new create show ]
 end

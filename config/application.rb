@@ -1,6 +1,6 @@
-require_relative "boot"
+require_relative "./boot"
 
-require "rails"
+require "rails/all"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
@@ -30,7 +30,11 @@ module BlogToStudy
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.i18n.default_locale = :en
 
+    # Configure the asset pipeline
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bootstrap-sass')
+    config.assets.precompile += %w( bootstrap.css )
     # Don't generate system test files.
     config.generators.system_tests = nil
   end

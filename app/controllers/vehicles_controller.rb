@@ -10,7 +10,7 @@ class VehiclesController < ApplicationController
   def create # aqui é do backend
     @vehicle = Vehicle.new(vehicle_params)
 
-    if @vehicle.save 
+    if @vehicle.save
       redirect_to vehicle_path(@vehicle)
     else
       render :new
@@ -20,9 +20,10 @@ class VehiclesController < ApplicationController
   def show # aqui mostro 1 por vez
     @vehicle = Vehicle.find(params[:id])
   end
+
   private
 
   def vehicle_params # strong parameters
-    params.require(:vehicle).permit(:brand, :model, :year, :plate, :kind)
+    params.require(:vehicle).permit(:id, :brand, :model, :year, :plate, :kind)
   end
 end
