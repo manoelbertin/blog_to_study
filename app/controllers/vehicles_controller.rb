@@ -13,6 +13,7 @@ class VehiclesController < ApplicationController
 
   private
 
-  def vehicle_params 
+  def vehicle_params # strong parameters
+    params.require(:vehicle).permit(:brand :model :year :plate :kind)
   end
 end
