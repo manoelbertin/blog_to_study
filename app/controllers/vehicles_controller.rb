@@ -8,5 +8,11 @@ class VehiclesController < ApplicationController
   end
 
   def create
+    @vehicle = Vehicle.new(params[:vehicle])
+  end
+
+  private
+
+  def vehicle_params 
   end
 end
