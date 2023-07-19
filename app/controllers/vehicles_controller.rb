@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-  def index
+  def index # aqui mostro a listagem de veículos
     @vehicles = Vehicle.all.order(created_at: :desc)
   end
 
@@ -11,6 +11,9 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.new(vehicle_params)
   end
 
+  def show # aqui mostro 1 por vez
+    @vehicle = Vehicle.find(params)
+  end
   private
 
   def vehicle_params # strong parameters
