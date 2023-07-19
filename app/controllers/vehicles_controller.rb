@@ -12,7 +12,7 @@ class VehiclesController < ApplicationController
   end
 
   def show # aqui mostro 1 por vez
-    @vehicle = Vehicle.find(params)
+    @vehicle = Vehicle.find(params[:id])
   end
   private
 
