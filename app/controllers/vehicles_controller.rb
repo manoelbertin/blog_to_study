@@ -35,6 +35,11 @@ class VehiclesController < ApplicationController
     end
   end
 
+  def destroy
+    @vehicle = Vehicle.find(params[:id])
+    
+  end
+
   private
 
   def vehicle_params # strong parameters
