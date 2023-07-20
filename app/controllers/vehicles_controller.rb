@@ -21,6 +21,10 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.find(params[:id])
   end
 
+  def edit # aqui é do frontend
+    @vehicle = Vehicle.find(params[:id])
+  end
+
   private
 
   def vehicle_params # strong parameters
