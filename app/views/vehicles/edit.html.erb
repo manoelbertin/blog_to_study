@@ -1,0 +1,43 @@
+<h1>Edit Vehicle</h1>
+
+<% if @vehicle.errors.any? %>
+  <% @vehicle.errors.full_messages.each do |message| %>
+    <p>
+      <%= message %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= form_with model: @vehicle, data: { turbo: false } do |f| %>
+    
+  <p>
+    <%= f.label :brand, 'Brand:'%>
+    <%= f.text_field :brand %>
+  </p>
+  
+  <p>
+    <%= f.label :model, 'Model:'%>
+    <%= f.text_field :model %>
+  </p>
+
+  <p>
+    <%= f.label :year, 'Year:'%>
+    <%= f.number_field :year %>
+  </p>
+
+  <p>
+    <%= f.label :plate, 'Plate:'%>
+    <%= f.text_field :plate %>
+  </p>
+
+  <p>
+    <%= f.label :kind, 'Kind:'%>
+    <%= f.number_field :kind %>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
