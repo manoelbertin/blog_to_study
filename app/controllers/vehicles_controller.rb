@@ -1,4 +1,6 @@
 class VehiclesController < ApplicationController
+  before_action :get_vehicle, except: %i[ index new create ]
+
   def index # aqui mostro a listagem de veículos
     @vehicles = Vehicle.all.order(created_at: :desc)
   end
@@ -17,17 +19,11 @@ class VehiclesController < ApplicationController
     end
   end
 
-  def show # aqui mostro 1 por vez
-    @vehicle = Vehicle.find(params[:id])
-  end
+  def show; end
 
-  def edit # aqui é do frontend
-    @vehicle = Vehicle.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @vehicle = Vehicle.find(params[:id])
-
     if @vehicle.update(vehicle_params)
       redirect_to vehicle_path(@vehicle)
     else
@@ -36,15 +32,16 @@ class VehiclesController < ApplicationController
   end
 
   def destroy
-    @vehicle = Vehicle.find(params[:id])
-
     @vehicle.destroy
-    
     redirect_to vehicles_path
   end
 
 
   private
+
+  def get_vehicle 
+    @vehicle = Vehicle.find(params[:id])
+  end
 
   def vehicle_params # strong parameters
     params.require(:vehicle).permit(:id, :brand, :model, :year, :plate, :kind)
