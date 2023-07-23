@@ -1,4 +1,4 @@
-<h2>Vehicles</h2>
+<h2>Vehicles List</h2>
 
 <p>
   <%= link_to 'New Vehicle', new_vehicle_path %>
@@ -7,14 +7,15 @@
 <% @vehicles.each do |vehicle| %>
 
   <p>
-    <%= link_to vehicle_path(vehicle) do %>
+    <%#= link_to vehicle_path(vehicle) do %>
     <%= vehicle.id %> |
     <%= vehicle.brand %> |
     <%= vehicle.model %> |
     <%= vehicle.year %> |
     <%= vehicle.plate %> |
     <%= vehicle.kind %> |
-    <% end %>
+    <%= link_to 'Details', vehicle_path(vehicle) %> |
+    <%# end %>
   </p>
 
   <% end %>
