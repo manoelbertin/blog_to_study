@@ -16,7 +16,7 @@
     <%= vehicle.kind %> |
     <%= link_to 'Details', vehicle_path(vehicle) %> |
     <%= link_to 'Edit', edit_vehicle_path(vehicle) %> |
-    <%= link_to 'Delete', vehicle_path(vehicle) %> |
+    <%= link_to 'Delete', vehicle_path(vehicle), data: { 'turbo-method': :delete } %> |
     <%# end %>
   </p>
 
