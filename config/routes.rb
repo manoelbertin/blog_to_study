@@ -18,6 +18,6 @@ Rails.application.routes.draw do
 
   ### aqui está o PADRAO RESTFull
 
-  resources :vehicles, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :vehicles
   #resources :vehicles#, only: %i[ index new create show edit update destroy]
 end
