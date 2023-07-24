@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-  before_action :get_vehicle, except: %i[ index new create ]
+  before_action :fetch_vehicle, except: %i[ index new create ]
 
   def index # aqui mostro a listagem de veículos
     @vehicles = Vehicle.all.order(created_at: :desc)
@@ -39,7 +39,7 @@ class VehiclesController < ApplicationController
 
   private
 
-  def get_vehicle 
+  def fetch_vehicle 
     @vehicle = Vehicle.find(params[:id])
   end
 
