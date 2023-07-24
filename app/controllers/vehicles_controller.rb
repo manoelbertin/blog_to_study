@@ -12,11 +12,9 @@ class VehiclesController < ApplicationController
   def create # aqui é do backend
     @vehicle = Vehicle.new(vehicle_params)
 
-    if @vehicle.save
-      redirect_to vehicle_path(@vehicle)
-    else
-      render :new
-    end
+    return redirect_to vehicle_path(@vehicle) if @vehicle.save
+      
+    render :new
   end
 
   def show; end
@@ -24,18 +22,16 @@ class VehiclesController < ApplicationController
   def edit; end
 
   def update
-    if @vehicle.update(vehicle_params)
-      redirect_to vehicle_path(@vehicle)
-    else
-      render :edit
-    end
+    return redirect_to vehicle_path(@vehicle) if @vehicle.update(vehicle_params)
+
+    render :edit
   end
 
   def destroy
     @vehicle.destroy
+
     redirect_to vehicles_path
   end
-
 
   private
 
