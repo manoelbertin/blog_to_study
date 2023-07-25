@@ -12,7 +12,7 @@ class VehiclesController < ApplicationController
   def create # aqui é do backend
     @vehicle = Vehicle.new(vehicle_params)
 
-    return redirect_to vehicle_path(@vehicle) if @vehicle.save
+    return redirect_to @vehicle if @vehicle.save
       
     render :new
   end
@@ -22,7 +22,7 @@ class VehiclesController < ApplicationController
   def edit; end
 
   def update
-    return redirect_to vehicle_path(@vehicle) if @vehicle.update(vehicle_params)
+    return redirect_to @vehicle if @vehicle.update(vehicle_params)
 
     render :edit
   end
