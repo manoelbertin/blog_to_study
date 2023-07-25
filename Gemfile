@@ -8,6 +8,7 @@ gem "rails", "~> 7.0.5"
 
 # bootstrap css
 gem 'bootstrap-sass'
+
 # jquery
 gem 'jquery-rails'
 
