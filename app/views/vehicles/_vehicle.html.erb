@@ -1,0 +1,12 @@
+  <p>
+  <%= vehicle.id %> |
+  <%= vehicle.brand %> |
+  <%= vehicle.model %> |
+  <%= vehicle.year %> |
+  <%= vehicle.plate %> |
+  <%= vehicle.kind %> |
+  <%= link_to 'Details', vehicle_path(vehicle) %> |
+  <%= link_to 'Edit', edit_vehicle_path(vehicle) %> |
+  <%= button_to 'Delete', vehicle_path(vehicle), method: :delete, class: 'mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium' %>
+  </p>
+  
