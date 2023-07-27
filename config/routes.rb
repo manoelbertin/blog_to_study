@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clients
   get '/home', controller: 'home', action: 'index'
 
   # get '/vehicles', controller: 'vehicles', action: 'index'
