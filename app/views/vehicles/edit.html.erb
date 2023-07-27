@@ -1,5 +1,7 @@
 <h1>Edit Vehicle</h1>
 
+<%#= render 'layouts/shared/errors', object: @vehicle %>
+
 <% if @vehicle.errors.any? %>
   <% @vehicle.errors.full_messages.each do |message| %>
     <p>
@@ -7,4 +9,5 @@
     </p>
   <% end %>
 <% end %>
+
 <%= render 'form', vehicle: @vehicle %>
